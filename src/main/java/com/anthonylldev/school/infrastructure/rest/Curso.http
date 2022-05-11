@@ -1,0 +1,35 @@
+POST http://localhost:8080/school/cursos
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nombre": "Introduccion a Spring Boot",
+  "resumen": "Lorem ipsun dolor sit amet"
+}
+
+###
+
+POST http://localhost:8080/school/cursos
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nombre": "Introduccion a Java",
+  "resumen": "Lorem ipsun dolor sit amet"
+}
+
+###
+
+GET http://localhost:8080/school/cursos/1
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/school/cursos/1
+
+###
+
+GET http://localhost:8080/school/cursos
+Accept: application/json
+
+###
