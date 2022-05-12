@@ -1,12 +1,14 @@
 package com.anthonylldev.school.application.dto;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 public class CursoDto implements Serializable {
     private Long id;
     private String nombre;
     private String resumen;
+    private List<LeccionDto> lecciones;
 
     public CursoDto() {
     }
@@ -33,6 +35,14 @@ public class CursoDto implements Serializable {
 
     public void setResumen(String resumen) {
         this.resumen = resumen;
+    }
+
+    public List<LeccionDto> getLecciones() {
+        return lecciones;
+    }
+
+    public void setLecciones(List<LeccionDto> lecciones) {
+        this.lecciones = lecciones;
     }
 
     @Override

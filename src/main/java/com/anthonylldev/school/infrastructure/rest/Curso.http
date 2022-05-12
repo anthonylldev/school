@@ -15,17 +15,34 @@ Content-Type: application/json
 
 {
   "nombre": "Introduccion a Java",
-  "resumen": "Lorem ipsun dolor sit amet"
+  "resumen": "Lorem ipsun dolor sit amet",
+  "lecciones": [
+    {
+      "titulo": "Introduccion",
+      "contenido": "Lorem ipsun dolor sit amet",
+      "orden": 10
+    },
+    {
+      "titulo": "Introduccion",
+      "contenido": "Lorem ipsun dolor sit amet",
+      "orden": 10
+    },
+    {
+      "titulo": "Introduccion",
+      "contenido": "Lorem ipsun dolor sit amet",
+      "orden": 10
+    }
+  ]
 }
 
 ###
 
-GET http://localhost:8080/school/cursos/1
+GET http://localhost:8080/school/cursos/1/lecciones
 Accept: application/json
 
 ###
 
-DELETE http://localhost:8080/school/cursos/1
+DELETE http://localhost:8080/school/cursos/52
 
 ###
 

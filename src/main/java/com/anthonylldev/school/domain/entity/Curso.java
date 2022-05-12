@@ -1,6 +1,7 @@
 package com.anthonylldev.school.domain.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "cursos")
@@ -17,6 +18,9 @@ public class Curso {
 
     @Column(name = "resumen", nullable = false, length = 2000)
     private String resumen;
+
+    @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
+    Set<Leccion> lecciones;
 
     public Long getId() {
         return id;
@@ -40,5 +44,14 @@ public class Curso {
 
     public void setResumen(String resumen) {
         this.resumen = resumen;
+    }
+
+    public Set<Leccion> getLecciones() {
+        return lecciones;
+    }
+
+    public void setLecciones(Set<Leccion> lecciones) {
+        this.lecciones = lecciones;
+        this.lecciones.forEach(leccion -> leccion.setCurso(this));
     }
 }
