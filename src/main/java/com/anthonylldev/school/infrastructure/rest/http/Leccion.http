@@ -5,5 +5,9 @@ Content-Type: application/json
 {
   "titulo": "Introduccion",
   "contenido": "Lorem ipsun dolor sit amet",
-  "orden": 10
+  "orden": 10,
+  "profesorId": 202
 }
+
+###
+
