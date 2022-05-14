@@ -37,7 +37,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/school/cursos/1/lecciones
+GET http://localhost:8080/school/cursos/102/lecciones
 Accept: application/json
 
 ###
