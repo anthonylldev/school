@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class ProfesorController {
+public class ProfesorRestController {
     private final ProfesorService profesorService;
 
     @Autowired
-    public ProfesorController(ProfesorService profesorService) {
+    public ProfesorRestController(ProfesorService profesorService) {
         this.profesorService = profesorService;
     }
 
