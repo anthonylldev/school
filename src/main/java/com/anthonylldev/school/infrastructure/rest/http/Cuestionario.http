@@ -1,0 +1,18 @@
+GET http://localhost:8080/school/cuestionarios
+Accept: application/json
+
+###
+
+GET http://localhost:8080/school/cuestionarios/502
+Accept: application/json
+
+###
+
+POST http://localhost:8080/school/cuestionarios
+Accept: application/json
+Content-Type: application/json
+
+{
+  "titulo": "Cuestionario 2",
+  "notaMinima": 5
+}
