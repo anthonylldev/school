@@ -1,0 +1,23 @@
+GET http://localhost:8080/school/adjuntos
+Accept: application/json
+
+###
+
+POST http://localhost:8080/school/adjuntos
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nombre": "Puppy.jpg",
+  "mimeType": "image/jpg"
+}
+
+###
+
+PUT http://localhost:8080/school/cursos/102/lecciones/252/adjuntos
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 403
+}

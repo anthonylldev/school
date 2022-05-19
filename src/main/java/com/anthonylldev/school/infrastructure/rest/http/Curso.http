@@ -1,0 +1,52 @@
+POST http://localhost:8080/school/cursos
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nombre": "Introduccion a Spring Boot",
+  "resumen": "Lorem ipsun dolor sit amet"
+}
+
+###
+
+POST http://localhost:8080/school/cursos
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nombre": "Introduccion a Java",
+  "resumen": "Lorem ipsun dolor sit amet",
+  "lecciones": [
+    {
+      "titulo": "Introduccion",
+      "contenido": "Lorem ipsun dolor sit amet",
+      "orden": 10
+    },
+    {
+      "titulo": "Introduccion",
+      "contenido": "Lorem ipsun dolor sit amet",
+      "orden": 10
+    },
+    {
+      "titulo": "Introduccion",
+      "contenido": "Lorem ipsun dolor sit amet",
+      "orden": 10
+    }
+  ]
+}
+
+###
+
+GET http://localhost:8080/school/cursos/102/lecciones
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/school/cursos/52
+
+###
+
+GET http://localhost:8080/school/cursos
+Accept: application/json
+
+###

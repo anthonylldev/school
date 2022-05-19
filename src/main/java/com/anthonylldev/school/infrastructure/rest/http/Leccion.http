@@ -1,0 +1,13 @@
+POST http://localhost:8080/school/cursos/102/lecciones
+Accept: application/json
+Content-Type: application/json
+
+{
+  "titulo": "Introduccion",
+  "contenido": "Lorem ipsun dolor sit amet",
+  "orden": 10,
+  "profesorId": 202
+}
+
+###
+

@@ -1,0 +1,15 @@
+GET http://localhost:8080/school/profesores
+Accept: application/json
+
+###
+
+POST http://localhost:8080/school/profesores
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nombre": "Profesor Anthony",
+  "numeroTelefono": "555-123-456"
+}
+
+###
