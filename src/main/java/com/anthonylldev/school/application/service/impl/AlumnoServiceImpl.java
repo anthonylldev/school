@@ -1,6 +1,7 @@
 package com.anthonylldev.school.application.service.impl;
 
 import com.anthonylldev.school.application.dto.AlumnoDto;
+import com.anthonylldev.school.application.dto.CalificacionDto;
 import com.anthonylldev.school.application.dto.CursoSimpleDto;
 import com.anthonylldev.school.application.mapper.AlumnoMapper;
 import com.anthonylldev.school.application.service.AlumnoService;
@@ -73,5 +74,16 @@ public class AlumnoServiceImpl implements AlumnoService {
 
         alumno.eliminarCursoPorId(cursoId);
         this.alumnoRepository.save(alumno);
+    }
+
+    @Override
+    @Transactional
+    public AlumnoDto añadirCalificacion(Long alumnoId, CalificacionDto calificacionDto) {
+        AlumnoDto alumnoDto = obtenerAlumnoPorId(alumnoId)
+                .orElseThrow(() -> new RuntimeException("Alumno no encontrado"));
+        alumnoDto.getCalificaciones().add(calificacionDto);
+        Alumno alumno = this.alumnoRepository.save(this.alumnoMapper.toEntity(alumnoDto));
+        return this.alumnoMapper.toDto(alumno);
+
     }
 }

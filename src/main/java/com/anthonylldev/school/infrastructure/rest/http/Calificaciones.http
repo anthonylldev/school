@@ -1,0 +1,14 @@
+GET http://localhost:8080/school/alumnos/302/calificaciones
+Accept: application/json
+
+###
+
+POST http://localhost:8080/school/alumnos/302/calificaciones
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nota": 9,
+  "cuestionarioId": 502,
+  "fechaCalificacion": "2022-01-06"
+}

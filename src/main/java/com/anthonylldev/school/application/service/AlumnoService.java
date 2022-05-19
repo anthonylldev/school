@@ -1,6 +1,7 @@
 package com.anthonylldev.school.application.service;
 
 import com.anthonylldev.school.application.dto.AlumnoDto;
+import com.anthonylldev.school.application.dto.CalificacionDto;
 import com.anthonylldev.school.application.dto.CursoSimpleDto;
 
 import java.util.List;
@@ -13,4 +14,5 @@ public interface AlumnoService {
     void eliminarAlumnoPorId(Long alumnoId);
     List<CursoSimpleDto> registrarAlumnoEnCurso(Long alumnoId, CursoSimpleDto cursoSimpleDto);
     void eliminarCursoDeAlumno(Long alumnoId, Long cursoId);
+    AlumnoDto añadirCalificacion(Long alumnoId, CalificacionDto calificacionDto);
 }
