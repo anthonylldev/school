@@ -2,12 +2,14 @@ package com.anthonylldev.school.application.dto;
 
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 public class CuestionarioDto implements Serializable {
     private Long id;
     private String titulo;
     private Integer notaMinima;
+    private List<PreguntaCuestionarioDto> preguntas;
 
     public CuestionarioDto() {
     }
@@ -34,6 +36,14 @@ public class CuestionarioDto implements Serializable {
 
     public void setNotaMinima(Integer notaMinima) {
         this.notaMinima = notaMinima;
+    }
+
+    public List<PreguntaCuestionarioDto> getPreguntas() {
+        return preguntas;
+    }
+
+    public void setPreguntas(List<PreguntaCuestionarioDto> preguntas) {
+        this.preguntas = preguntas;
     }
 
     @Override

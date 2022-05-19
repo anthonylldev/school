@@ -13,6 +13,22 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "titulo": "Cuestionario 3",
+  "titulo": "Cuestionario 4",
   "notaMinima": 5
+}
+
+###
+
+GET http://localhost:8080/school/cuestionarios/502/preguntas
+Accept: application/json
+
+###
+
+PUT http://localhost:8080/school/cuestionarios/503/preguntas
+Accept: application/json
+Content-Type: application/json
+
+{
+  "preguntaId": 552,
+  "orden": 10
 }

@@ -1,6 +1,7 @@
 package com.anthonylldev.school.infrastructure.rest;
 
 import com.anthonylldev.school.application.dto.CuestionarioDto;
+import com.anthonylldev.school.application.dto.PreguntaCuestionarioDto;
 import com.anthonylldev.school.application.service.CuestionarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,5 +37,20 @@ public class CuestionarioRestController {
     public ResponseEntity<CuestionarioDto> crearCuestionario(@RequestBody CuestionarioDto cuestionarioDto) {
         cuestionarioDto = this.cuestionarioService.crearCuestionario(cuestionarioDto);
         return new ResponseEntity<>(cuestionarioDto, HttpStatus.CREATED);
+    }
+
+    @PutMapping(value = "/cuestionarios/{cuestionarioId}/preguntas", produces = "application/json", consumes = "application/json")
+    public ResponseEntity<List<PreguntaCuestionarioDto>> añadePreguntaEnCuestinario(@PathVariable Long cuestionarioId,
+                                                                                     @RequestBody PreguntaCuestionarioDto preguntaCuestionarioDto) {
+        List<PreguntaCuestionarioDto> preguntaCuestionarioDtos = this.cuestionarioService
+                .añadePreguntaEnCuestionario(cuestionarioId, preguntaCuestionarioDto);
+        return new ResponseEntity<>(preguntaCuestionarioDtos, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/cuestionarios/{cuestionarioId}/preguntas", produces = "application/json")
+    public ResponseEntity<List<PreguntaCuestionarioDto>> obtenerPreguntasDeCuestionario(@PathVariable Long cuestionarioId) {
+        List<PreguntaCuestionarioDto> preguntaCuestionarioDtos = this.cuestionarioService
+                .obtenerPreguntasDeCuestionario(cuestionarioId);
+        return new ResponseEntity<>(preguntaCuestionarioDtos, HttpStatus.OK);
     }
 }

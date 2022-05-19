@@ -1,6 +1,7 @@
 package com.anthonylldev.school.domain.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "cuestionarios")
@@ -17,6 +18,9 @@ public class Cuestionario {
 
     @Column(name = "nota_minima", nullable = false)
     private Integer notaMinima;
+
+    @OneToMany(mappedBy = "cuestionario", cascade = CascadeType.ALL)
+    private Set<PreguntaCuestionario> preguntas;
 
     public Long getId() {
         return id;
@@ -40,5 +44,13 @@ public class Cuestionario {
 
     public void setNotaMinima(Integer notaMinima) {
         this.notaMinima = notaMinima;
+    }
+
+    public Set<PreguntaCuestionario> getPreguntas() {
+        return preguntas;
+    }
+
+    public void setPreguntas(Set<PreguntaCuestionario> preguntaCuestionario) {
+        this.preguntas = preguntaCuestionario;
     }
 }
